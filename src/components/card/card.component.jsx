@@ -28,7 +28,7 @@ const Card = (data) =>
                 <h2 className="type">{type_of_material?.toUpperCase() ?? type?.toUpperCase()}</h2>
                 <img className="banner" src={imgUrl} alt="banner" />
             </div>
-            <div className="small bottom-half ">
+            <div className="bottom-half ">
                 <h5 className="date">{pub_date?.substring(0,10) ?? published_date}</h5>
                 <h2 className="title">{ headline ? headline.main : title}</h2>
                 <p className="plot">{abstract}</p>               

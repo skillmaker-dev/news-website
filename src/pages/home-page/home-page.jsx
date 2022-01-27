@@ -1,13 +1,12 @@
 import React from "react";
 import './home-page.style.css';
 
-import HomeCard from "../../components/home-card/home-card.component";
-
+import Home from "../../components/home-banner/home-banner.component";
 const HomePage = () => 
 (
-    <>
-    <HomeCard />
-    </>
+    <div className="homepage">
+    <Home />
+    </div>
 );
 
 export default HomePage;
