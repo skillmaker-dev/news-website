@@ -1,0 +1,35 @@
+.navbar {
+  width: 100vw;
+  height: 60px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  position: fixed;
+  align-items: center;
+  top: 0;
+  z-index: 5;
+  padding-left: 30rem;
+  padding-right: 30rem;
+}
+
+.button {
+  height: 70%;
+  text-align: center;
+  padding: 7px 14px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.button:hover {
+  background-color: rgb(240, 240, 240);
+  cursor: pointer;
+}
+
+.button.active {
+  background-color: rgb(240, 240, 240);
+}

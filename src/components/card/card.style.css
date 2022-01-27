@@ -1,0 +1,49 @@
+.card-container {
+  width: 300px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  transition: transform 0.2s;
+}
+
+.card-container:hover {
+  transform: scale(1.03);
+  cursor: pointer;
+}
+
+.top-half {
+  height: 45%;
+}
+
+.bottom-half {
+  height: 55%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 20px;
+}
+.date {
+  color: darkgray;
+}
+.plot {
+  font-size: 13px;
+  font-weight: 600;
+}
+.banner {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.type {
+  color: white;
+  position: absolute;
+  padding: 1rem;
+}
+
+.link {
+  color: blueviolet;
+  font-weight: 700;
+}

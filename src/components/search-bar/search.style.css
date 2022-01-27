@@ -1,0 +1,12 @@
+.search-input {
+  padding: 15px 14px;
+  width: 400px;
+  border-radius: 20px;
+  background-color: white;
+  border: none;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  outline: none;
+}
+.search-input::placeholder {
+  color: darkgray;
+}
