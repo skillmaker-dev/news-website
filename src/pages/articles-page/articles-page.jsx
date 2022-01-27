@@ -20,7 +20,7 @@ const ArticlesPage = () =>
 
     useEffect(() => {
         let mounted = true;
-        getArticles(searchValue)
+        getArticles(searchValue,3)
           .then(items => {
             if(mounted) {
               setList(items)

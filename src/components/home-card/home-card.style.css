@@ -44,7 +44,8 @@
 }
 
 .article-title {
-  font-weight: 600;
+  font-weight: 400;
+  font-size: 20px;
 }
 .article-type {
   padding: 3px;

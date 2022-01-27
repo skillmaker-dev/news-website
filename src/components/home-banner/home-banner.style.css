@@ -16,6 +16,11 @@
 
   gap: 10px 10px;
 }
+.more {
+  text-transform: uppercase;
+  margin-top: 40px;
+  font-weight: 600;
+}
 
 .area2 {
   grid-area: area2;

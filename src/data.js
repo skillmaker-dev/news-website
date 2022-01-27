@@ -1,6 +1,6 @@
 import { trackPromise } from 'react-promise-tracker';
-const getArticles = (query) => 
-trackPromise((fetch(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${query ? query :'news'}&api-key=d8iyb5MTRJ8sOoIjfAelGlgGzmw7wDCb`)
+const getArticles = (query,page) => 
+trackPromise((fetch(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${query ? query :'news'}&page=${page}&api-key=d8iyb5MTRJ8sOoIjfAelGlgGzmw7wDCb`)
     .then(data => data.json()).then(data => data.response.docs)))
 
 
@@ -11,7 +11,7 @@ const getPopular = () =>
 
 const getHome = () => 
     (fetch('https://api.nytimes.com/svc/topstories/v2/home.json?api-key=d8iyb5MTRJ8sOoIjfAelGlgGzmw7wDCb')
-    .then(data => data.json()))
+    .then(data => data.json()).then(data => data.results))
 
 
 export  {getArticles,getHome,getPopular}
