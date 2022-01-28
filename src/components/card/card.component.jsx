@@ -21,6 +21,14 @@ const Card = (data) =>
             if(media[0] !== undefined) imgUrl =  media[0]["media-metadata"][1].url;
         }   
     }
+
+    function truncate(input,second) {
+        if (input !== undefined &&  second !== undefined ) {
+            if(input.length > 70  &&  second.length > 60)
+                return input.substring(0, 70) + '...';
+        }
+        return input;
+     };
     return(
         <a href={web_url ?? url} target="_blank" rel="noreferrer">
         <div className="card-container">
@@ -31,7 +39,7 @@ const Card = (data) =>
             <div className="bottom-half ">
                 <h5 className="date">{pub_date?.substring(0,10) ?? published_date}</h5>
                 <h2 className="title">{ headline ? headline.main : title}</h2>
-                <p className="plot">{abstract}</p>               
+                <p className="plot">{truncate(abstract,headline ? headline.main : title)}</p>               
             </div>
         </div>
         </a>
