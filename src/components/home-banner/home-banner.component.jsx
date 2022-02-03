@@ -24,7 +24,7 @@ const Home = () =>
         }, [])
 
     return(
-        <div>
+        <>
             
                     {
                         list.length > 0 ? (
@@ -45,7 +45,7 @@ const Home = () =>
                 }
             
             </div>
-        </div>
+        </>
     )
 }
 

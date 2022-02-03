@@ -6,6 +6,7 @@ const Card = (data) =>
 {
     const {type_of_material,web_url,type,multimedia,title,url,abstract,headline,media,pub_date,published_date} = data;
     
+    
 
     let imgUrl ='https://images.unsplash.com/photo-1619252584172-a83a949b6efd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80';
     if(multimedia !== undefined)

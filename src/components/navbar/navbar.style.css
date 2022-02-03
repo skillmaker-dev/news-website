@@ -1,5 +1,5 @@
 .navbar {
-  width: 100vw;
+  width: 100%;
   height: 60px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   background-color: white;
@@ -10,8 +10,18 @@
   align-items: center;
   top: 0;
   z-index: 5;
-  padding-left: 30rem;
-  padding-right: 30rem;
+  /*padding-left: 30rem;
+  padding-right: 30rem;*/
+}
+
+.nav-button {
+  width: 35px;
+  height: 35px;
+  background-image: url("../../assets/images/menu.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: none;
+  transition: all 0.15s;
 }
 
 .button {
@@ -23,6 +33,15 @@
   align-items: center;
   font-weight: 500;
   transition: all 0.2s;
+  overflow: hidden;
+}
+.buttons-list {
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .button:hover {
@@ -32,4 +51,39 @@
 
 .button.active {
   background-color: rgb(240, 240, 240);
+}
+
+@media screen and (min-width: 0px) and (max-width: 500px) {
+  .navbar {
+    height: fit-content;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .nav-button {
+    display: block;
+    margin: 1rem;
+
+    align-self: flex-end;
+  }
+  .buttons-list {
+    max-height: 0;
+    opacity: 0;
+    transition: all 0.3s;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .checked {
+    max-height: 1000px;
+    opacity: 1;
+  }
+  .clicked {
+    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+    border-radius: 5px;
+  }
+
+  .button {
+    margin-bottom: 1rem;
+  }
 }

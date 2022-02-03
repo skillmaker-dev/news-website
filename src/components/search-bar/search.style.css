@@ -1,6 +1,9 @@
+.search-container {
+  min-width: 20%;
+}
 .search-input {
   padding: 15px 14px;
-  width: 400px;
+  width: 100%;
   border-radius: 20px;
   background-color: white;
   border: none;

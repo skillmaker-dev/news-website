@@ -1,7 +1,6 @@
 .home-banner-container {
   display: grid;
-  grid-template-columns: max-content max-content max-content;
-  grid-template-rows: max-content max-content;
+
   gap: 5px 5px;
   grid-auto-flow: row;
   grid-template-areas:
@@ -10,13 +9,14 @@
 }
 
 .home-body-container {
+  justify-content: center;
   margin-top: 5px;
   display: grid;
-  grid-template-columns: max-content max-content;
-
+  grid-template-columns: max-content;
   gap: 10px 10px;
 }
 .more {
+  width: 100%;
   text-transform: uppercase;
   margin-top: 40px;
   font-weight: 600;
@@ -36,4 +36,22 @@
 
 .area4 {
   grid-area: area4;
+}
+
+@media screen and (min-width: 768px) {
+  .home-body-container {
+    grid-template-columns: repeat(1, max-content);
+  }
+}
+
+@media screen and (min-width: 1070px) {
+  .home-body-container {
+    grid-template-columns: repeat(2, max-content);
+  }
+}
+
+@media screen and (min-width: 1568px) {
+  .home-body-container {
+    grid-template-columns: repeat(3, max-content);
+  }
 }

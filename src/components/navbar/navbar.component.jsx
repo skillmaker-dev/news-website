@@ -5,14 +5,20 @@ import { Link } from 'react-router-dom';
 const NavBar = () => 
 {
     const [active,setActive] = useState(window.location.pathname);
+    const [open,setOpen] = useState(false);
+
 
     return(
     <div className="navbar">
-        <Link  to="/" style={{textDecoration: 'none' , color: 'inherit',cursor: 'default'}}>
+
+        <div className={`nav-button ${open ? 'clicked' : null}`} onClick={() => setOpen(!open)}/>
+        <div className={`buttons-list ${open ? 'checked' : null}`}>
+            <Link  to="/" style={{textDecoration: 'none' , color: 'inherit',cursor: 'default'}}>
         <div className={ active === "/" ? `button active` : 'button'} onClick={() => setActive('/') }>
             Home
         </div>
         </Link>
+        
         <Link  to="/articles" style={{textDecoration: 'none' , color: 'inherit',cursor: 'default'}}>
         <div className={ active === "/articles" ? `button active` : 'button'} onClick={() => setActive('/articles') }>
             Articles
@@ -28,6 +34,7 @@ const NavBar = () =>
             About
         </div>
         </Link>
+        </div>
     </div>);
 }
 

@@ -6,7 +6,7 @@ const HomeCard = (props) => {
     const {size,title,section,url,multimedia} = props;
 
     return(
-        <a href={url} target="_blank" rel="noreferrer">
+        <a className="card-link" href={url} target="_blank" rel="noreferrer">
         <div className={`home-card ${size ?? "large"}`}>
             <div className="bottom-text">
             <span className="article-type"><h5 >{section?.toUpperCase()}</h5></span>

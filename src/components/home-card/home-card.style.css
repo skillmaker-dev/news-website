@@ -17,8 +17,9 @@
   height: 480px;
 }
 .wide {
-  width: 505px;
-  height: 300px;
+  width: 100%;
+  max-width: 505px;
+  max-height: 300px;
 }
 .small {
   width: 270px;
