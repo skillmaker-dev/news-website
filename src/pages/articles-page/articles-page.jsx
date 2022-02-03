@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useRef } from "react";
 import './articles-page.style.css';
 
 import Container from "../../components/container/container.component";
@@ -15,6 +15,7 @@ const ArticlesPage = () =>
     const [page,setPage] = useState(1);
     const [list, setList] = useState([]);
 
+
     
     function loadingHandler(boolean){setLoading(boolean)}; 
 
@@ -22,34 +23,41 @@ const ArticlesPage = () =>
       setSearchValue(data.target.value);
   } 
     const pageSetter = () => {
-      
       setPage(page + 1)
     }
 
-    
 
+    function usePrevious(value) {
+      const ref = useRef();
+      useEffect(() => {
+        ref.current = value;
+      });
+      return ref.current;
+    }
+
+
+    const previous = usePrevious(page);
     useEffect(() => {
-        let mounted = true;
-        getArticles(searchValue,page,loadingHandler)
-          .then(items => {
-            if(mounted) {
-              setList(prev => [...prev,...items])
+      let mounted = true;
+      getArticles(searchValue,page,loadingHandler)
+        .then(items => {
+          if(mounted) {
+            if(page !== previous)
+            {
+              setList(prev => [...prev,...items])  
             }
-            })
-            return () => mounted = false;    
-        }, [page])
+            else
+            {
+              setList([...items])
+            }
+            
+          }
+          })
+          return () => mounted = false;    
+      }, [page,searchValue])
 
-        useEffect(() => 
-        {
-          let mounted = true;
-          getArticles(searchValue,page,loadingHandler)
-            .then(items => {
-              if(mounted) {
-                setList([...items])
-              }
-              })
-              return () => mounted = false;
-        },[searchValue])
+
+    
 
 
 
@@ -63,7 +71,7 @@ return(
     
 
     {
-      isLoading ? <CircularProgress color="inherit" />
+      isLoading ? (list.length !== 0 ? <CircularProgress color="inherit" /> : null)
       : ( list.length !== 0 ? <Button style={{
         color: "#191919",
         borderColor: "#191919"

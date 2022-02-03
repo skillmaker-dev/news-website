@@ -6,9 +6,13 @@ return (fetch(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${quer
         return data.response.docs} ))}
 
 
-const getPopular = () =>
-(fetch('https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=d8iyb5MTRJ8sOoIjfAelGlgGzmw7wDCb')
-    .then(data => data.json()).then(data => data.results))
+const getPopular = (func) =>{
+    func(true);
+return (fetch(`https://api.nytimes.com/svc/mostpopular/v2/viewed/7.json?api-key=d8iyb5MTRJ8sOoIjfAelGlgGzmw7wDCb`)
+    .then(data => data.json()).then(data => { 
+        func(false);
+        return data.results;
+    }))}
 
 
 const getHome = () => 

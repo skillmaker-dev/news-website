@@ -16,7 +16,7 @@
   gap: 10px 10px;
 }
 .more {
-  width: 100%;
+  width: max-content;
   text-transform: uppercase;
   margin-top: 40px;
   font-weight: 600;
