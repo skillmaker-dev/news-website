@@ -23,8 +23,6 @@ const Home = () =>
             return () => mounted = false;    
         }, [])
 
-
-        let obj = list[0];
     return(
         <div>
             

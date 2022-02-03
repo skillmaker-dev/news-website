@@ -3,7 +3,7 @@ import './home-card.style.css';
 
 
 const HomeCard = (props) => {
-    const {size,title,abstract,section,url,multimedia} = props;
+    const {size,title,section,url,multimedia} = props;
 
     return(
         <a href={url} target="_blank" rel="noreferrer">

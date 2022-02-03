@@ -64,7 +64,7 @@ return(
 
     {
       isLoading ? <CircularProgress color="inherit" />
-      : ( list.length !=0 ? <Button style={{
+      : ( list.length !== 0 ? <Button style={{
         color: "#191919",
         borderColor: "#191919"
       }} onClick={pageSetter} variant="outlined">Show more</Button> : null)
