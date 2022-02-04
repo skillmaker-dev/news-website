@@ -1,21 +1,19 @@
 import React from 'react';
 import './footer.style.css';
+import nytimes from '../../assets/images/nytimes.png'
 
 export default function Footer() {
   return <footer className="myFooter">
         <div className="footer-container">
             <ul>
-                <li><a href="#">Company Information</a></li>
-                <li><a href="#">Contact us</a></li>
-                <li><a href="#">Reviews</a></li>
-                <li><a href="#">Terms of service</a></li>
+                <li><a href="https://developer.nytimes.com" target="_blank"><img src={nytimes} alt="nytimes logo" /></a></li>
             </ul>
-        <p className="footer-copyright">© 2016 Copyright Text</p>
+        <p className="footer-copyright">© 2022 By Anas Chahid</p>
         </div>
         <div className="footer-social">
-            <a href="#" className="social-icons"><i className="fa fa-github"></i></a>
-            <a href="#" className="social-icons"><i className="fa fa-linkedin"></i></a>
-            <a href="#" className="social-icons"><i className="fa fa-twitter"></i></a>
+            <a href="https://www.github.com/skillmaker-dev" target="_blank" className="social-icons"><i className="fa fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/anas-chahid/" target="_blank" className="social-icons"><i className="fa fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/iamanaschahid/" target="_blank" className="social-icons"><i className="fa fa-instagram"></i></a>
         </div>
     </footer>
   ;

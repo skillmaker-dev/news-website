@@ -26,8 +26,7 @@
 }
 
 .myFooter li {
-  display: inline-block;
-  margin: 0px 15px;
+  margin: auto 15px;
   line-height: 2;
 }
 
@@ -70,12 +69,12 @@
   color: #017ec7;
 }
 
-.myFooter .fa-twitter:hover {
-  color: #00aced;
+.myFooter .fa-instagram:hover {
+  color: #000;
 }
 
-.myFooter .fa-twitter:focus {
-  color: #00aced;
+.myFooter .fa-instagram:focus {
+  color: #000;
 }
 
 /* CSS used for positioning the footers at the bottom of the page. */

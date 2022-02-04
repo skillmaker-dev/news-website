@@ -1,0 +1,10 @@
+.about-container {
+  padding: 1rem;
+  font-family: "Open Sans";
+  font-weight: 600;
+}
+
+.about-container a {
+  color: darkgray;
+  text-decoration: underline;
+}
