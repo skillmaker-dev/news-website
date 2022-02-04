@@ -13,8 +13,11 @@
   height: 480px;
 }
 .large {
-  width: 520px;
-  height: 480px;
+  width: 90%;
+  height: fit-content;
+  max-height: 600px;
+  min-width: 250px;
+  max-width: 1535px;
 }
 .wide {
   width: 100%;
@@ -25,6 +28,7 @@
   width: 270px;
   height: 237px;
 }
+
 .article-image {
   width: 100%;
   height: 100%;
@@ -59,4 +63,10 @@
     rgba(253, 63, 29, 1) 0%,
     rgba(252, 72, 69, 1) 100%
   );
+}
+
+@media screen and (max-width: 572px) {
+  .wide {
+    width: 100%;
+  }
 }

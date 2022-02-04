@@ -1,5 +1,15 @@
 body {
-  margin-top: 5rem;
   background-color: #f2f4f3;
   overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
+  padding-top: 5rem;
 }

@@ -46,7 +46,7 @@ const ArticlesPage = () =>
             {
               setList(prev => [...prev,...items])  
             }
-            else
+            else 
             {
               setList([...items])
             }

@@ -1,39 +1,40 @@
 import React, { useState } from "react";
 import './navbar.style.css'
-import { Link } from 'react-router-dom';
+import { Link ,useNavigate} from 'react-router-dom';
 
 const NavBar = () => 
 {
     const [active,setActive] = useState(window.location.pathname);
     const [open,setOpen] = useState(false);
-
+    const navigate = useNavigate();
 
     return(
     <div className="navbar">
 
         <div className={`nav-button ${open ? 'clicked' : null}`} onClick={() => setOpen(!open)}/>
         <div className={`buttons-list ${open ? 'checked' : null}`}>
-            <Link  to="/" style={{textDecoration: 'none' , color: 'inherit',cursor: 'default'}}>
-        <div className={ active === "/" ? `button active` : 'button'} onClick={() => setActive('/') }>
+            
+        <div
+         className={ active === "/" ? `button active` : 'button'}
+        onClick={() =>{ setActive('/')
+                        navigate("/")
+        }}>
             Home
         </div>
-        </Link>
-        
-        <Link  to="/articles" style={{textDecoration: 'none' , color: 'inherit',cursor: 'default'}}>
-        <div className={ active === "/articles" ? `button active` : 'button'} onClick={() => setActive('/articles') }>
+ 
+        <div className={ active === "/articles" ? `button active` : 'button'} onClick={() => { setActive('/articles'); navigate("/articles")}}>
             Articles
-        </div>
-        </Link>
-        <Link  to="/popular" style={{textDecoration: 'none' , color: 'inherit',cursor: 'default'}}>
-        <div className={ active === "/popular" ? `button active` : 'button'} onClick={() => setActive('/popular') }>
+        </div>  
+        
+        <div className={ active === "/popular" ? `button active` : 'button'} onClick={() => {setActive('/popular'); navigate("/popular") }}>
             Popular
         </div>
-        </Link>
-        <Link  to="/about" style={{textDecoration: 'none' , color: 'inherit',cursor: 'default'}}>
-        <div className={ active === "/about" ? `button active` : 'button'} onClick={() => setActive('/about') }>
+        
+        
+        <div className={ active === "/about" ? `button active` : 'button'} onClick={() =>{ setActive('/about'); navigate("/about") }}>
             About
         </div>
-        </Link>
+        
         </div>
     </div>);
 }

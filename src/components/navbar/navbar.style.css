@@ -67,6 +67,7 @@
     align-self: flex-end;
   }
   .buttons-list {
+    visibility: hidden;
     max-height: 0;
     opacity: 0;
     transition: all 0.3s;
@@ -75,6 +76,7 @@
     justify-content: space-around;
   }
   .checked {
+    visibility: visible;
     max-height: 1000px;
     opacity: 1;
   }

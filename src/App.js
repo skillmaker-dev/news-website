@@ -8,6 +8,7 @@ import NavBar from './components/navbar/navbar.component';
 import ContactPage from './pages/about-page/about-page';
 import PopularPage from './pages/popular-page/popular-page';
 import HomePage from './pages/home-page/home-page';
+import Footer from './components/footer/footer.component';
 
 function App() {
  
@@ -21,7 +22,7 @@ function App() {
         <Route path="/about" element={<ContactPage />} />
         <Route path="/popular" element={<PopularPage />} />
       </Routes>
-        
+        <Footer/>
       
     </div>
   );
