@@ -3,23 +3,38 @@ import './popular-page.style.css';
 import { getPopular } from "../../data";
 import Container from "../../components/container/container.component";
 import { CircularProgress  } from "@mui/material";
+import Title from "../../components/title/title.component";
+
 
 const PopularPage = () => 
 {
   
     const [isLoading,setLoading] = useState(false);
-    const [list, setList] = useState([]);
-
+    const [lastDay, setLastDay] = useState([]);
+    const [lastWeek, setLastWeek] = useState([]);
+    const [lastMonth, setLastMonth] = useState([]);
     function loadingHandler(boolean){setLoading(boolean)}; 
 
     useEffect(() => {
       let mounted = true;
-      getPopular(loadingHandler)
+      getPopular(loadingHandler,1)
         .then(items => {
           if(mounted) {
-            setList(items)
+            setLastDay(items)
           }
           })
+      getPopular(loadingHandler,7)
+          .then(items => {
+            if(mounted) {
+              setLastWeek(items)
+            }
+            })
+    getPopular(loadingHandler,30)
+          .then(items => {
+            if(mounted) {
+              setLastMonth(items)
+            }
+            })
           return () => mounted = false;    
       }, [])
 
@@ -28,11 +43,17 @@ const PopularPage = () =>
 
     return(
       <div className="popular-page">
-        <Container cards={list}/>
+        {!isLoading ? <Title text="Today" /> : null}
+        <Container cards={lastDay}/>
+        {!isLoading ? <Title text="Last Week" /> : null}
+        <Container cards={lastWeek}/>
+        {!isLoading ? <Title text="Last Month" /> : null}
+        <Container cards={lastMonth}/>
+        
         {
       isLoading ? <CircularProgress color="inherit" />
       : null
-    }
+        }
     </div>
     );
 }

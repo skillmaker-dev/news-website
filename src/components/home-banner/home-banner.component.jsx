@@ -2,15 +2,21 @@ import React, { useState ,useEffect} from "react";
 import './home-banner.style.css';
 import {getHome} from '../../data';
 import HomeCard from "../home-card/home-card.component";
+import Title from "../title/title.component";
+import { CircularProgress  } from "@mui/material";
+
 const Home = () =>
 {
 
 
     const [list, setList] = useState([]);
+    const [isLoading,setLoading] = useState(false);
+
+    function loadingHandler(boolean){setLoading(boolean)}; 
 
     useEffect(() => {
         let mounted = true;
-        getHome()
+        getHome(loadingHandler)
           .then(items => {
             
             if(mounted) {
@@ -25,6 +31,9 @@ const Home = () =>
 
     return(
         <>
+        {isLoading ? <CircularProgress style={{marginTop: '10px'}} color="inherit" />
+      : null
+      }
             
                     {
                        list.length > 0 ? (
@@ -35,7 +44,7 @@ const Home = () =>
                     
                     }
             
-            <h2 className="more">More articles</h2>
+            {!isLoading ? <Title text="More Articles" /> : null}
             <div className="home-body-container">
                 {
                     list.slice(1).map((card,index) => (<HomeCard size="wide" key={index} {...card}/>))

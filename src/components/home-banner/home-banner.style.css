@@ -37,18 +37,21 @@
 
 @media screen and (min-width: 768px) {
   .home-body-container {
+    margin-top: 2rem;
     grid-template-columns: repeat(1, max-content);
   }
 }
 
 @media screen and (min-width: 1070px) {
   .home-body-container {
+    margin-top: 2rem;
     grid-template-columns: repeat(2, max-content);
   }
 }
 
 @media screen and (min-width: 1568px) {
   .home-body-container {
+    margin-top: 2rem;
     grid-template-columns: repeat(3, max-content);
   }
 }

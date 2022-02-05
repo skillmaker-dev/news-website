@@ -6,6 +6,7 @@ import Search from "../../components/search-bar/search.component";
 import {getArticles} from '../../data';
 import { Button,CircularProgress  } from "@mui/material";
 
+
 const ArticlesPage = () => 
 {
     
@@ -21,6 +22,7 @@ const ArticlesPage = () =>
 
     const searchHandler = (data) => {
       setSearchValue(data.target.value);
+      setPage(1);
   } 
     const pageSetter = () => {
       setPage(page + 1)
@@ -36,16 +38,22 @@ const ArticlesPage = () =>
     }
 
 
-    const previous = usePrevious(page);
+    const previousPage = usePrevious(page);
+  
     useEffect(() => {
       let mounted = true;
       getArticles(searchValue,page,loadingHandler)
         .then(items => {
           if(mounted) {
-            if(page !== previous)
+            if(previousPage > page)
+            {
+              setList([...items])  
+            }
+            else if(page !== previousPage)
             {
               setList(prev => [...prev,...items])  
             }
+            
             else 
             {
               setList([...items])
@@ -68,6 +76,7 @@ return(
       : null
       }
     <Container cards={list}/>
+    
     
 
     {

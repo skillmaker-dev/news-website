@@ -8,7 +8,7 @@ const Card = (data) =>
     
     
 
-    let imgUrl ='https://images.unsplash.com/photo-1619252584172-a83a949b6efd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80';
+    let imgUrl ='https://images.unsplash.com/photo-1544646290-9ec4c8ff8277?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80';
     if(multimedia !== undefined)
     {
         if(multimedia[21] !== undefined)
