@@ -7,7 +7,7 @@
 .home-body-container {
   margin-bottom: 3rem;
   justify-content: center;
-  margin-top: 5px;
+  margin-top: 2rem;
   display: grid;
   grid-template-columns: minmax(250px, 90%);
   gap: 10px 10px;
